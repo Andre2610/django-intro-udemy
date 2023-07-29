@@ -5,12 +5,14 @@
 {% endblock %}
 
 {% block content %}
-<h1>All challenge</h1>
-<ul>
-    {% for month in months %}
-    <li>
-        <a href="{% url "month-challenge" month %}">{{ month|title }}</a>
-    </li>
-    {% endfor %}
-</ul>
+    {% include "challenges/shared/header.html" %}
+
+    <h1>All challenges</h1>
+    <ul>
+        {% for month in months %}
+        <li>
+            <a href="{% url "month-challenge" month %}">{{ month|title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
